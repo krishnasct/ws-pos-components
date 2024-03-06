@@ -1,0 +1,54 @@
+.btn-comp{
+    border: none;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    padding: 0;
+    cursor: pointer;
+    @include body-font;
+    &.btn-sm{
+        display: flex;
+        padding: 4px 11px 4px 11px;
+        align-items: center;
+        gap: 4px;
+        border-radius: 5px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%; /* 18.2px */
+        letter-spacing: 0.28px;
+        &.btn-icon-text{
+            padding-bottom: 5px;
+            padding-left: 6px;
+            .material-symbols-rounded{
+                font-size: 1.125rem;
+            }
+            .btn-text{
+                font-size: 0.87rem;
+                padding-top: 1px;
+            }
+        }
+    }
+    &.btn-icon-text{
+        padding-left: 10px;
+    }
+    &.btn-primary{
+        background: linear-gradient(180deg, #44ADFF 0%, #3298E7 100%);
+        color: #fff;
+        &:hover{
+            background: #3298E7;
+            &:active{
+                background: #2b85ca;
+            }
+        }
+    }
+    &.btn-icon{
+        @include flex-all-center;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+        gap: 10px;
+        flex-shrink: 0;
+        border-radius: 4px;
+        border: 1px solid #E9EDF5;
+        background: #FFF;
+    }
+}

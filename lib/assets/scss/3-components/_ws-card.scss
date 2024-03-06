@@ -1,0 +1,155 @@
+@import "../1-helpers/variables";
+@import "../1-helpers/mixins";
+@import "../button";
+@import "../2-basics/icons";
+@import "../2-basics/fonts";
+
+/********** SOF Catergory Tile **********/
+.catergory-title-comp {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  gap: 15px;
+  .c-t-c-item {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    box-shadow: $shadow-category-tiles;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 8px 10px;
+    justify-content: space-between;
+    .c-t-c-i-image-block {
+      width: 55px;
+      height: 55px;
+      flex-shrink: 0;
+      border-radius: 50px;
+      border: 1px solid transparent;
+      @include flex-all-center;
+      img {
+        width: 36px;
+      }
+    }
+    .c-t-c-i-title {
+      color: #0d1629;
+      text-align: center;
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%;
+      letter-spacing: 0.14px;
+      @include text-ellipse-1;
+    }
+    &.active {
+      border-radius: 8px;
+      background: linear-gradient(180deg, #44adff 0%, #3298e7 100%);
+      border: 1px solid transparent;
+      .c-t-c-i-image-block {
+        border: 1px solid #53b4ff;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 105, 186, 0.9) 0%,
+          rgba(114, 193, 255, 0.9) 100%
+        );
+      }
+      .c-t-c-i-title {
+        color: #fff;
+      }
+    }
+    &:hover {
+      box-shadow: $shadow-neutral;
+      transition: 0.3s;
+    }
+  }
+}
+
+/********** EOF Catergory Tile **********/
+
+/********** SOF Product Tile **********/
+
+.product-title-comp {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  gap: 20px;
+  .p-t-c-item {
+    width: 100%;
+    max-width: 170px;
+    min-width: 170px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .p-t-c-i-image-block {
+      border-radius: 3px;
+      border: 2px solid #fff;
+      box-shadow: $shadow-card-with-border;
+      position: relative;
+      @include flex-all-center;
+      .btn-comp.btn-sm {
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        .material-symbols-rounded {
+          font-size: 1rem;
+          color: #7b809a;
+        }
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .p-t-c-i-info-block {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+      .p-t-c-i-title {
+        color: #2d3b53;
+        font-size: 0.938rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 140%;
+        letter-spacing: 0.15px;
+        @include text-ellipse-2;
+      }
+      .p-t-c-i-rate {
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%; /* 18.2px */
+        letter-spacing: 0.28px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        .p-t-c-i-r-currency {
+          color: #7b809a;
+        }
+        .p-t-c-i-r-value {
+          color: #2d3b53;
+        }
+      }
+    }
+    &:hover {
+      .p-t-c-i-image-block {
+        .btn-comp.btn-sm {
+          box-shadow: $shadow-tiny-btn;
+          &:hover {
+            border: 1px solid #8eceff;
+            background: #fff;
+            .material-symbols-rounded {
+              color: #0987e9;
+            }
+            &:active {
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/********** EOF Product Tile **********/
+

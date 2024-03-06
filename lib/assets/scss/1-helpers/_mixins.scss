@@ -1,0 +1,50 @@
+@mixin body-font{    
+    font-family: 'Roboto', sans-serif;
+}
+
+@mixin sprite-img{    
+    background: url(../img/wondersoft-sprite-image.png) no-repeat;
+}
+
+@mixin flex-all-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/********** SOF Text Ellipse **********/
+
+@mixin text-ellipse{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@mixin text-ellipse-1{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%
+}
+
+@mixin text-ellipse-2{    
+    @include text-ellipse();
+    -webkit-line-clamp: 2;
+}
+
+@mixin text-ellipse-3{    
+    @include text-ellipse();
+    -webkit-line-clamp: 3;
+}
+
+@mixin text-ellipse-4{    
+    @include text-ellipse();
+    -webkit-line-clamp: 4;
+}
+
+@mixin text-ellipse-5{    
+    @include text-ellipse();
+    -webkit-line-clamp: 5;
+}
+
+/********** EOF Text Ellipse **********/

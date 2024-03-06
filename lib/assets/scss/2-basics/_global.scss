@@ -1,0 +1,85 @@
+body,html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: none;
+    text-decoration: unset;
+    color: $text-color-2;
+    @include body-font;
+    height: 100vh;
+    font-size: 16px;
+}
+
+#root{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+a,
+a:hover {
+    color: inherit;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.img-fluid {
+    height: auto;
+    max-width: 100%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    padding-right: 10px;
+    margin-right: 5px;
+    border-radius: 0;
+    box-shadow: -1px -1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #fff;
+    border-radius: 0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #555555;    
+    border-radius: 10px;
+}
+
+// X-Small devices (portrait phones, less than 575px)
+// No media query for `xs` since this is the default
+
+// 7680x4320
+
+// XX-Large devices (larger desktops, 1399px and down)
+@media (max-width: 1399px) {
+    html,body{
+        font-size: 16px;
+    }
+}
+// X-Large devices (large desktops, 1199px and down)
+@media (max-width: 1199px) {
+    html,body{
+        font-size: 15px;
+    }
+}
+// Large devices (desktops, 991px and down)
+@media (max-width: 991px) { }
+
+// Medium devices (tablets, 767px and down)
+@media (max-width: 767px) { }
+
+// Small devices (landscape phones, 575px and down)
+@media (max-width: 575px) { }
