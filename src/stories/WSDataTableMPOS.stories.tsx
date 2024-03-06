@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { WSDataGrid } from "../../lib/components/WSDataGrid";
+import { WSDataTableMPOS } from "../../lib/components/WSDataTableMPOS";
 
 const columns = [
   { field: "id", headerName: "ID", width: 70 },
@@ -34,30 +34,23 @@ const rows = [
 ];
 
 const meta: any = {
-  title: "WS Components/WSDataGrid",
-  component: WSDataGrid,
+  title: "WS Components/WSDataTableMPOS",
+  component: WSDataTableMPOS,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof WSDataGrid>;
+} satisfies Meta<typeof WSDataTableMPOS>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const WSDataGrid_Grid: Story = {
-  name: "WS Data Table (Grid)",
-  args: {
-    rows,
-    columns,
-  },
-};
-
-export const WSDataGrid_mPOS_Interface: Story = {
+export const WSDataTableMPOS_Grid: Story = {
   name: "WS Data Table (mPOS)",
   args: {
     rows,
     columns,
   },
 };
+

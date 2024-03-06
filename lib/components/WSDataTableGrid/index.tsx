@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
-import './WSDataGrid.css'
+import './WSDataTableGrid.css'
 
-interface WSDataGridProps {
+interface WSDataTableGridProps {
     columns: GridColDef[];
     rows: any[];
 }
 
-export function WSDataGrid(props: WSDataGridProps) {
+export function WSDataTableGrid(props: WSDataTableGridProps) {
   return (
     <div style={{ height: 400, width: '100%' }}>
       <DataGrid

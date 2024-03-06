@@ -1,10 +1,10 @@
 import React from "react";
-import './WSGrid.css';
+import './sample.css';
 
 interface WSGridProps {
     label: string;
 }
 
-export const WSGrid = (props: WSGridProps) => {
+export const Sample = (props: WSGridProps) => {
     return <button>{props.label}</button>
 }

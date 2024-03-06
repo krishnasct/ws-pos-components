@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+.MuiDataGrid-root{
+  border-radius: 0.5rem !important;
+  border: 1px solid #266899 !important;
+  background: #FFF;
+  box-shadow: 0px 2px 4px -10px rgba(0, 0, 0, 0.10);  
+}
+
+.MuiDataGrid-row.Mui-selected {
+  background-color: rgba(57, 164, 247, 0.10) !important;
+}
+
+.MuiDataGrid-cellCheckbox{
+  border-color: #E2E2E2 !important;
+}
+
+.MuiDataGrid-row:hover, .MuiDataGrid-row.Mui-hovered {
+  background-color: rgba(57, 164, 247, 0.10) !important;
+}
+.MuiDataGrid-columnHeader{
+  color: #266899;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 0.9rem */
+  letter-spacing: 0.0225rem;
+  border-right: 1px solid #266899 !important;
+  position: relative;
+}
+
+.MuiDataGrid-columnHeaders{
+  position: relative;
+}
+
+.MuiDataGrid-columnHeaders:after{
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  height: 1px;
+  background: #266899;
+}
+
+/* .MuiDataGrid-virtualScrollerRenderZone>*[data-rowindex="0"]{
+  border-top: 1px solid #266899 !important;
+} */
+
+.MuiDataGrid-row>.MuiDataGrid-cell, .MuiDataGrid-columnHeader {
+  min-height: 40px !important;
+  max-height: 40px !important;
+}
+
+.MuiDataGrid-row>.MuiDataGrid-cell+.MuiDataGrid-cell{
+  border-left: 1px solid #E2E2E2 !important;
+}
+.MuiDataGrid-row>.MuiDataGrid-cell::nth-last-child(2){
+  border-left: transparent !important;
+}
+
+.MuiDataGrid-row>.MuiDataGrid-cell{
+  border-color: #E2E2E2;
+}
+
+.MuiDataGrid-columnHeaderTitle{
+  font-size: 12px;
+  font-weight: 500 !important;
+  letter-spacing: 0;
+}
+
+.MuiDataGrid-row, .MuiDataGrid-columnHeaders{
+  min-height: unset !important;
+  max-height: unset !important;
+}
+
+.MuiDataGrid-row:nth-child(even){
+  background: #F3F8FB;
+}
+
+.MuiDataGrid-cellContent{
+  color:#060606 ;
+}
+
+.MuiDataGrid-cellCheckbox .MuiCheckbox-root, .MuiDataGrid-columnHeaderTitleContainerContent .MuiCheckbox-root{
+  transform: scale(0.9) !important;
+}
+
+.MuiDataGrid-columnHeader:focus, .MuiDataGrid-cell:focus {
+  outline: solid #000000 1px !important;
+  outline-offset: -1px;
+}
+/* .MuiDataGrid-footerContainer{
+  display: none !important;
+} */
+.MuiDataGrid-virtualScrollerContent{
+  height: auto !important;
+}
