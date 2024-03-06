@@ -35,6 +35,6 @@ const rows = [
 
 describe("WSDataTableMPOS", () => {
   test("renders the WSDataTableMPOS component", () => {
-    render(<WSDataTableMPOS rows={rows} columns={columns} />);
+    render(<WSDataTableMPOS rows={rows} columns={columns} search />);
   });
 });
