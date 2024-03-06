@@ -34,7 +34,7 @@ const columns = [
   ];
 
 const meta: any = {
-  title: 'WS Components/WSDataGrid',
+  title: 'WS Components/WS Datatable',
   component: WSDataGrid,
   parameters: {
     layout: 'centered',
@@ -47,7 +47,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const WSDataGrid_Grid: Story = {
-    name:"WS Data Table (Grid)",
+    name:"WS DataTable (Grid)",
   args: {
     rows,
     columns
@@ -55,7 +55,7 @@ export const WSDataGrid_Grid: Story = {
 };
 
 export const WSDataGrid_mPOS_Interface: Story = {
-    name:"WS Data Table (mPOS)",
+    name:"WS DataTable (mPOS)",
   args: {
     rows,
     columns
