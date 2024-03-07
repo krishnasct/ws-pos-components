@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Sample } from "../../lib/components/sample";
+import { Sample } from "../../lib/components/Sample";
 
 const meta: any = {
   title: "WS Components/Sample",

@@ -5,6 +5,6 @@ interface WSGridProps {
     label: string;
 }
 
-export const Sample = (props: WSGridProps) => {
+export const Sample1 = (props: WSGridProps) => {
     return <button>{props.label}</button>
 }

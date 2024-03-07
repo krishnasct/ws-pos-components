@@ -1,26 +1,2 @@
-import * as React from 'react';
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
-import './WSDataTableGrid.css'
-
-interface WSDataTableGridProps {
-    columns: GridColDef[];
-    rows: any[];
-}
-
-export function WSDataTableGrid(props: WSDataTableGridProps) {
-  return (
-    <div style={{ height: 400, width: '100%' }}>
-      <DataGrid
-        rows={props.rows}
-        columns={props.columns}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
-          },
-        }}
-        pageSizeOptions={[5, 10]}
-        checkboxSelection
-      />
-    </div>
-  );
-}
+export { WSDataTableGrid_V1 } from './WSDataTableGrid_V1';
+export { WSDataTableGrid_V2 } from './WSDataTableGrid_V2';

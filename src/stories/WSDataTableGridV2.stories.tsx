@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import { WSDataTableGrid } from "../../lib/components/WSDataTableGrid";
+import { WSDataTableGrid_V2 } from "../../lib/components/WSDataTableGrid";
 
 const columns = [
   { field: "id", headerName: "ID", width: 70 },
-  { field: "firstName", headerName: "First name", width: 130 },
+  { field: "firstName", headerName: "First name", width: 130, editable: true },
   { field: "lastName", headerName: "Last name", width: 130 },
   {
     field: "age",
@@ -33,21 +32,22 @@ const rows = [
   { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
 ];
 
+
 const meta: any = {
   title: "WS Components/WSDataTableGrid",
-  component: WSDataTableGrid,
+  component: WSDataTableGrid_V2,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof WSDataTableGrid>;
+} satisfies Meta<typeof WSDataTableGrid_V2>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const WSDataTableGrid_Grid: Story = {
-  name: "WS Data Table (Grid)",
+export const WSDataTableGrid_Grid_v2: Story = {
+  name: "WS Data Table (GridV2)",
   args: {
     rows,
     columns,
