@@ -1,19 +1,17 @@
-import type { Meta, StoryObj } from "@storybook/react";
-
+import React, { useState } from "react";
+import { type Meta, type StoryObj } from "@storybook/react";
 import { WSDataTableMPOS } from "../../lib/components/WSDataTableMPOS";
+import { GridColDef } from "@mui/x-data-grid";
+import { Button } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 
-const columns = [
+const columnData: GridColDef[] = [
   { field: "productName", headerName: "Product", width: 250 },
-  { field: "productInr", headerName: "INR", width: 100 },
-  { field: "productId", headerName: "Quantity", width: 100 },
-  { field: "action", headerName: "Action", width: 100 },
-  // { field: 'fullName', headerName: 'Full name', description: 'This column has a value getter and is not sortable.', sortable: false, width: 160,
-  //   valueGetter: (params) =>
-  //     `${params.row.firstName || ''} ${params.row.lastName || ''}`,
-  // },
+  { field: "productInr", headerName: "INR", width: 60 },
+  { field: "productId", headerName: "Quantity", width: 80 },
 ];
 
-const rows = [
+const rowData = [
   {
     id: 1,
     productName: "GREY POWER - Sneaker casual",
@@ -52,9 +50,57 @@ type Story = StoryObj<typeof meta>;
 
 export const WSDataTableMPOS_Grid: Story = {
   name: "WS Data Table (mPOS)",
-  args: {
-    rows,
-    columns,
-    search: true,
+  // args: {
+  //   rows,
+  //   columns,
+  //   search: true,
+  // },
+  render: function Render() {
+    //State Declaration
+    const [tableData, setTableData] = useState({
+      rows: rowData,
+      columns: columnData,
+    });
+
+    // Handle Delete Record
+    const deleteRecord = (id: string) => {
+      console.log(
+        "Check row data from storybook ---> delete record: rows:",
+        rowData
+      );
+      const filteredData = rowData.filter((row: any) => {
+        return row.id !== id;
+      });
+      console.log(
+        "Check filtered record from mPOS table story book -->",
+        filteredData
+      );
+      setTableData({ ...tableData, rows: filteredData });
+    };
+
+    // Push actions to the table column data
+    columnData.push({
+      field: "action",
+      headerName: "Action",
+      sortable: false,
+      renderCell: (params: any) => {
+        return (
+          <Button
+            variant="outlined"
+            startIcon={<DeleteIcon />}
+            onClick={() => deleteRecord(params?.id)}
+          />
+        );
+      },
+      width: 80,
+    });
+
+    return (
+      <WSDataTableMPOS
+        rows={tableData.rows}
+        columns={tableData.columns}
+        search
+      />
+    );
   },
 };

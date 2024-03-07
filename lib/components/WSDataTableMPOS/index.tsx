@@ -1,72 +1,44 @@
 // Import necessary dependencies
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
-import { FormControl, InputLabel } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { Button, FormControl, InputLabel } from "@mui/material";
 import "./WSDataTableMPOS.css";
-
-const columnDatas = [
-  { field: "productName", headerName: "Product", width: 250 },
-  { field: "productInr", headerName: "INR", width: 60 },
-  { field: "productId", headerName: "Quantity", width: 80 },
-  { field: "action", headerName: "Action", width: 30 },
-  // { field: 'fullName', headerName: 'Full name', description: 'This column has a value getter and is not sortable.', sortable: false, width: 160,
-  //   valueGetter: (params) =>
-  //     `${params.row.firstName || ''} ${params.row.lastName || ''}`,
-  // },
-];
-
-const rowDatas = [
-  {
-    id: 1,
-    productName: "GREY POWER - Sneaker casual",
-    productInr: "₹318.00",
-    productId: " #PRD453",
-    action: "DLDH0006",
-  },
-  {
-    id: 2,
-    productName: "DISH WASHER - Medium",
-    productInr: "₹50.00",
-    productId: " #PRD454",
-    action: "DLDH0007",
-  },
-  {
-    id: 3,
-    productName: "TERMERIC POWDER - 100g",
-    productInr: "₹75.00",
-    productId: " #PRD455",
-    action: "DLDH0008",
-  },
-];
 
 interface WSDataTableMPOSProps {
   rows: any;
   columns: any;
-  className: string;
-  search: boolean;
+  className?: string;
+  // actions: any;
+  search?: boolean;
 }
 
-// Create the main component
 export const WSDataTableMPOS = ({
   className,
   rows,
   columns,
+  // actions,
   search,
 }: WSDataTableMPOSProps) => {
-  const [tableDataRow, setTableDataRow] = useState(rows || rowDatas);
+
+  console.log("Check row datas from mPOS table component --->", rows);
+
+  const [tableDataRow, setTableDataRow] = useState(rows);
   const [searchDatas, setSearchDatas] = useState({
     values: "",
     icon: true,
   });
 
+  useEffect(() => setTableDataRow(rows), [rows]);
+
   const requestSearch = (searchVal: string) => {
     setSearchDatas({ ...searchDatas, icon: false, values: searchVal });
-    const filteredRows = rowDatas.filter((row) => {
+    const filteredRows = rows.filter((row: any) => {
       return row.productName.toLowerCase().includes(searchVal.toLowerCase());
     });
     setTableDataRow(filteredRows);
@@ -74,7 +46,7 @@ export const WSDataTableMPOS = ({
 
   const cancelSearch = () => {
     setSearchDatas({ ...searchDatas, icon: true, values: "" });
-    setTableDataRow(rows || rowDatas);
+    setTableDataRow(rows);
   };
 
   return (
@@ -111,7 +83,7 @@ export const WSDataTableMPOS = ({
       )}
       <DataGrid
         rows={tableDataRow}
-        columns={columns || columnDatas}
+        columns={columns}
         initialState={{
           pagination: {
             paginationModel: { page: 0, pageSize: 5 },
