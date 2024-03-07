@@ -1,24 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
-.MuiDataGrid-root{
+.grid-interface .MuiDataGrid-root{
   border-radius: 0.5rem !important;
   border: 1px solid #266899 !important;
   background: #FFF;
   box-shadow: 0px 2px 4px -10px rgba(0, 0, 0, 0.10);  
 }
 
-.MuiDataGrid-row.Mui-selected {
+.grid-interface .MuiDataGrid-row.Mui-selected {
   background-color: rgba(57, 164, 247, 0.10) !important;
 }
 
-.MuiDataGrid-cellCheckbox{
+.grid-interface .MuiDataGrid-cellCheckbox{
   border-color: #E2E2E2 !important;
 }
 
-.MuiDataGrid-row:hover, .MuiDataGrid-row.Mui-hovered {
+.grid-interface .MuiDataGrid-row:hover, .grid-interface .MuiDataGrid-row.Mui-hovered {
   background-color: rgba(57, 164, 247, 0.10) !important;
 }
-.MuiDataGrid-columnHeader{
+.grid-interface .MuiDataGrid-columnHeader{
   color: #266899;
   font-size: 0.75rem;
   font-style: normal;
@@ -29,11 +29,11 @@
   position: relative;
 }
 
-.MuiDataGrid-columnHeaders{
+.grid-interface .MuiDataGrid-columnHeaders{
   position: relative;
 }
 
-.MuiDataGrid-columnHeaders:after{
+.grid-interface .MuiDataGrid-columnHeaders:after{
   position: absolute;
   content: '';
   left: 0;
@@ -47,52 +47,52 @@
   border-top: 1px solid #266899 !important;
 } */
 
-.MuiDataGrid-row>.MuiDataGrid-cell, .MuiDataGrid-columnHeader {
+.grid-interface .MuiDataGrid-row>.MuiDataGrid-cell, .grid-interface .MuiDataGrid-columnHeader {
   min-height: 40px !important;
   max-height: 40px !important;
 }
 
-.MuiDataGrid-row>.MuiDataGrid-cell+.MuiDataGrid-cell{
+.grid-interface .MuiDataGrid-row>.MuiDataGrid-cell+.MuiDataGrid-cell{
   border-left: 1px solid #E2E2E2 !important;
 }
-.MuiDataGrid-row>.MuiDataGrid-cell::nth-last-child(2){
+.grid-interface .MuiDataGrid-row>.MuiDataGrid-cell::nth-last-child(2){
   border-left: transparent !important;
 }
 
-.MuiDataGrid-row>.MuiDataGrid-cell{
+.grid-interface .MuiDataGrid-row>.MuiDataGrid-cell{
   border-color: #E2E2E2;
 }
 
-.MuiDataGrid-columnHeaderTitle{
+.grid-interface .MuiDataGrid-columnHeaderTitle{
   font-size: 12px;
   font-weight: 500 !important;
   letter-spacing: 0;
 }
 
-.MuiDataGrid-row, .MuiDataGrid-columnHeaders{
+.grid-interface .MuiDataGrid-row, .grid-interface .MuiDataGrid-columnHeaders{
   min-height: unset !important;
   max-height: unset !important;
 }
 
-.MuiDataGrid-row:nth-child(even){
+.grid-interface .MuiDataGrid-row:nth-child(even){
   background: #F3F8FB;
 }
 
-.MuiDataGrid-cellContent{
+.grid-interface .MuiDataGrid-cellContent{
   color:#060606 ;
 }
 
-.MuiDataGrid-cellCheckbox .MuiCheckbox-root, .MuiDataGrid-columnHeaderTitleContainerContent .MuiCheckbox-root{
+.grid-interface .MuiDataGrid-cellCheckbox .MuiCheckbox-root, .grid-interface .MuiDataGrid-columnHeaderTitleContainerContent .MuiCheckbox-root{
   transform: scale(0.9) !important;
 }
 
-.MuiDataGrid-columnHeader:focus, .MuiDataGrid-cell:focus {
+.grid-interface .MuiDataGrid-columnHeader:focus, .grid-interface .MuiDataGrid-cell:focus {
   outline: solid #000000 1px !important;
   outline-offset: -1px;
 }
 /* .MuiDataGrid-footerContainer{
   display: none !important;
 } */
-.MuiDataGrid-virtualScrollerContent{
+.grid-interface .MuiDataGrid-virtualScrollerContent{
   height: auto !important;
 }

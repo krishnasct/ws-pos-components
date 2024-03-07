@@ -1,48 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
-.form-card {
+.mpos-interface .form-card {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px,
     rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px;
   border-radius: 16px;
 }
 
-.form-card .MuiFormControl-root,
-.form-card .MuiAutocomplete-root,
-.MuiFormGroup-root {
+.mpos-interface .form-card .MuiFormControl-root,
+.mpos-interface .form-card .MuiAutocomplete-root,
+.mpos-interface .MuiFormGroup-root {
   width: calc(33.3% - 16px);
   margin: 10px 8px;
 }
 
-.form-card .MuiAutocomplete-root {
+.mpos-interface .form-card .MuiAutocomplete-root {
   margin: 0;
 }
 
-.form-group-w-33 {
+.mpos-interface .form-group-w-33 {
   width: 100% !important;
   display: flex;
   justify-content: flex-start;
 }
 
-.form-group-w-33 > * {
+.mpos-interface .form-group-w-33 > * {
   max-width: calc(33.3% - 0px);
   margin: 0 !important;
   flex-grow: 1;
 }
 
-.form-card .MuiAutocomplete-root .MuiFormControl-root {
+.mpos-interface .form-card .MuiAutocomplete-root .MuiFormControl-root {
   width: -webkit-fill-available;
 }
 
-.w-100 {
+.mpos-interface .w-100 {
   width: 100% !important;
 }
 
-.material-layout {
+.mpos-interface .material-layout {
   display: flex;
   gap: 20px;
   position: relative;
 }
 
-.material-layout > .liner-progress {
+.mpos-interface .material-layout > .liner-progress {
   position: absolute;
   content: "";
   top: 0;
@@ -52,30 +52,30 @@
   left: -20px;
 }
 
-.material-layout > * {
+.mpos-interface .material-layout > * {
   width: 50%;
 }
 
-.m-l-r-card-group {
+.mpos-interface .m-l-r-card-group {
   display: flex;
   gap: 20px;
   align-items: flex-start;
 }
 
-.m-l-r-card-group > * {
+.mpos-interface .m-l-r-card-group > * {
   width: 100%;
 }
 
-.css-13xfq8m-MuiTabPanel-root {
+.mpos-interface .css-13xfq8m-MuiTabPanel-root {
   padding: 0 !important;
 }
 
-label {
+.mpos-interface label {
   background: #fff;
   padding-right: 5px !important;
 }
 
-.MuiDataGrid-root {
+.mpos-interface .MuiDataGrid-root {
   background: #fff;
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   border-radius: 4px;
@@ -84,46 +84,46 @@ label {
   overflow: hidden;
 }
 
-.w-98 {
+.mpos-interface .w-98 {
   width: 98% !important;
 }
 
-.css-1dbir7u-MuiAvatar-root img {
+.mpos-interface .css-1dbir7u-MuiAvatar-root img {
   width: calc(100% + 10px);
 }
 
-.d-vertical {
+.mpos-interface .d-vertical {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.css-uym98a-MuiImageList-root {
+.mpos-interface .css-uym98a-MuiImageList-root {
   width: 100%;
 }
 
-.MuiDataGrid-root {
+.mpos-interface .MuiDataGrid-root {
   border-radius: 0rem !important;
   border: 1px solid transparent !important;
   background: #fff;
   box-shadow: 0px 2px 4px -10px rgba(0, 0, 0, 0.1);
 }
 
-.MuiDataGrid-row.Mui-selected {
+.mpos-interface .MuiDataGrid-row.Mui-selected {
   background-color: rgba(57, 164, 247, 0.1) !important;
 }
 
-.MuiDataGrid-cellCheckbox {
+.mpos-interface .MuiDataGrid-cellCheckbox {
   border-color: #e2e2e2 !important;
 }
 
-.MuiDataGrid-row:hover,
-.MuiDataGrid-row {
+.mpos-interface .MuiDataGrid-row:hover,
+.mpos-interface .MuiDataGrid-row {
   border: 1px solid transparent;
 }
 
-.MuiDataGrid-row:hover,
-.MuiDataGrid-row.Mui-hovered {
+.mpos-interface .MuiDataGrid-row:hover,
+.mpos-interface .MuiDataGrid-row.Mui-hovered {
   border-radius: 5px;
   border: 1px solid #8eceff;
   background: #e5f4ff !important;
@@ -131,14 +131,14 @@ label {
   cursor: pointer;
 }
 
-.MuiDataGrid-row:hover > .MuiDataGrid-cell,
-.MuiDataGrid-row.Mui-hovered > .MuiDataGrid-cell,
-.MuiDataGrid-row.Mui-hovered > .MuiDataGrid-cell:hover > .MuiDataGrid-cell,
-.MuiDataGrid-row.Mui-hovered > .MuiDataGrid-cell .MuiDataGrid-cellContent {
+.mpos-interface .MuiDataGrid-row:hover > .MuiDataGrid-cell,
+.mpos-interface .MuiDataGrid-row.Mui-hovered > .MuiDataGrid-cell,
+.mpos-interface .MuiDataGrid-row.Mui-hovered > .MuiDataGrid-cell:hover > .MuiDataGrid-cell,
+.mpos-interface .MuiDataGrid-row.Mui-hovered > .MuiDataGrid-cell .MuiDataGrid-cellContent {
   color: #0987e9;
 }
 
-.MuiDataGrid-columnHeader {
+.mpos-interface .MuiDataGrid-columnHeader {
   color: #7b809a;
   font-size: 12px;
   font-style: normal;
@@ -148,11 +148,11 @@ label {
   border-right: 1px solid transparent !important;
 }
 
-.MuiDataGrid-columnHeaders {
+.mpos-interface .MuiDataGrid-columnHeaders {
   position: relative;
 }
 
-.MuiDataGrid-withBorderColor {
+.mpos-interface .MuiDataGrid-withBorderColor {
   border-color: transparent !important;
 }
 
@@ -160,51 +160,51 @@ label {
   border-top: 1px solid #266899 !important;
 } */
 
-.MuiDataGrid-row > .MuiDataGrid-cell,
-.MuiDataGrid-columnHeader {
+.mpos-interface .MuiDataGrid-row > .MuiDataGrid-cell,
+.mpos-interface .MuiDataGrid-columnHeader {
   min-height: 40px !important;
   max-height: 40px !important;
 }
 
-.MuiDataGrid-row > .MuiDataGrid-cell + .MuiDataGrid-cell {
+.mpos-interface .MuiDataGrid-row > .MuiDataGrid-cell + .MuiDataGrid-cell {
   border-left: 1px solid transparent !important;
 }
-.MuiDataGrid-row > .MuiDataGrid-cell::nth-last-child(2) {
+.mpos-interface .MuiDataGrid-row > .MuiDataGrid-cell::nth-last-child(2) {
   border-left: transparent !important;
 }
 
-.MuiDataGrid-row > .MuiDataGrid-cell {
+.mpos-interface .MuiDataGrid-row > .MuiDataGrid-cell {
   border-color: transparent !important;
 }
 
-.MuiDataGrid-columnHeaderTitle {
+.mpos-interface .MuiDataGrid-columnHeaderTitle {
   font-size: 12px;
   font-weight: 500 !important;
   letter-spacing: 0;
 }
 
-.MuiDataGrid-row,
-.MuiDataGrid-columnHeaders {
+.mpos-interface .MuiDataGrid-row,
+.mpos-interface .MuiDataGrid-columnHeaders {
   min-height: unset !important;
   max-height: unset !important;
 }
-.MuiDataGrid-cellContent {
+.mpos-interface .MuiDataGrid-cellContent {
   color: #060606;
 }
 
-.MuiDataGrid-cellCheckbox .MuiCheckbox-root,
-.MuiDataGrid-columnHeaderTitleContainerContent .MuiCheckbox-root {
+.mpos-interface .MuiDataGrid-cellCheckbox .MuiCheckbox-root,
+.mpos-interface .MuiDataGrid-columnHeaderTitleContainerContent .MuiCheckbox-root {
   transform: scale(0.9) !important;
 }
 
-.MuiDataGrid-columnHeader:focus,
-.MuiDataGrid-cell:focus {
+.mpos-interface .MuiDataGrid-columnHeader:focus,
+.mpos-interface .MuiDataGrid-cell:focus {
   outline: solid #000000 1px !important;
   outline-offset: -1px;
 }
 /* .MuiDataGrid-footerContainer{
   display: none !important;
 } */
-.MuiDataGrid-virtualScrollerContent {
+.mpos-interface .MuiDataGrid-virtualScrollerContent {
   height: auto !important;
 }

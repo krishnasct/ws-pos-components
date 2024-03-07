@@ -23,17 +23,17 @@ const rows = [
   },
   {
     id: 2,
-    productName: "GREY POWER - Sneaker casual",
-    productInr: "₹318.00",
-    productId: " #PRD453",
-    action: "DLDH0006",
+    productName: "DISH WASHER - Medium",
+    productInr: "₹50.00",
+    productId: " #PRD454",
+    action: "DLDH0007",
   },
   {
     id: 3,
-    productName: "GREY POWER - Sneaker casual",
-    productInr: "₹318.00",
-    productId: " #PRD453",
-    action: "DLDH0006",
+    productName: "TERMERIC POWDER - 100g",
+    productInr: "₹75.00",
+    productId: " #PRD455",
+    action: "DLDH0008",
   },
 ];
 
