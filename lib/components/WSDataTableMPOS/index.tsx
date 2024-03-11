@@ -55,7 +55,7 @@ export const WSDataTableMPOS = ({
       className={`mpos-interface ${className || ""}`}
     >
       {search && (
-        <FormControl sx={{ m: 1, width: "100%" }} variant="outlined">
+        <FormControl sx={{ m: 1, width: "100%" }} className="grid-search-comp" variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Search</InputLabel>
           <OutlinedInput
             id="search"

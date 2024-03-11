@@ -1,15 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { type Meta, type StoryObj } from "@storybook/react";
 import { WSDataTableMPOS } from "../../lib/components/WSDataTableMPOS";
 import { GridColDef } from "@mui/x-data-grid";
 import { Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const columnData: GridColDef[] = [
-  { field: "productName", headerName: "Product", width: 250 },
-  { field: "productInr", headerName: "INR", width: 60 },
-  { field: "productId", headerName: "Quantity", width: 80 },
-];
+// const columnData: GridColDef[] = [
+//   { field: "productName", headerName: "Product", width: 250 },
+//   { field: "productInr", headerName: "INR", width: 60 },
+//   { field: "productId", headerName: "Quantity", width: 80 },
+//   {
+//     field: "action",
+//     headerName: "Action",
+//     sortable: false,
+//     renderCell: (params: any) => {
+//       return (
+//         <Button
+//           variant="outlined"
+//           startIcon={<DeleteIcon />}
+//           onClick={() => deleteRecord(params?.id)}
+//         />
+//       );
+//     },
+//     width: 80,
+//   },
+// ];
 
 const rowData = [
   {
@@ -50,55 +65,71 @@ type Story = StoryObj<typeof meta>;
 
 export const WSDataTableMPOS_Grid: Story = {
   name: "WS Data Table (mPOS)",
-  // args: {
-  //   rows,
-  //   columns,
-  //   search: true,
-  // },
-  render: function Render() {
+  args: {
+    rows: rowData,
+    columns: [
+      { field: "productName", headerName: "Product", width: 250 },
+      { field: "productInr", headerName: "INR", width: 60 },
+      { field: "productId", headerName: "Quantity", width: 80 },
+    ],
+    search: true,
+  },
+  render: function Render(args: any) {
+    console.log("Check args from MPOS data table --->", args);
     //State Declaration
     const [tableData, setTableData] = useState({
-      rows: rowData,
-      columns: columnData,
+      rows: "",
     });
+
+    useEffect(() => setTableData({ ...tableData, rows: args.rows }), []);
 
     // Handle Delete Record
     const deleteRecord = (id: string) => {
       console.log(
-        "Check row data from storybook ---> delete record: rows:",
-        rowData
+        "Check state data from storybook ---> delete record: rows:",
+        tableData.rows
       );
-      const filteredData = rowData.filter((row: any) => {
-        return row.id !== id;
-      });
+      let filteredData: any = rowData
+        // .map((rows, index) => ({ ...rows, index }))    // // Push actions to the table column data
+        .filter((row: any) => {
+          return row.id !== id;
+        });
       console.log(
         "Check filtered record from mPOS table story book -->",
-        filteredData
+        filteredData.index,
+        "tableData.rows:",
+        tableData.rows
       );
-      setTableData({ ...tableData, rows: filteredData });
+      setTableData({
+        ...tableData,
+        rows: filteredData,
+      });
     };
-
-    // Push actions to the table column data
-    columnData.push({
-      field: "action",
-      headerName: "Action",
-      sortable: false,
-      renderCell: (params: any) => {
-        return (
-          <Button
-            variant="outlined"
-            startIcon={<DeleteIcon />}
-            onClick={() => deleteRecord(params?.id)}
-          />
-        );
-      },
-      width: 80,
-    });
 
     return (
       <WSDataTableMPOS
         rows={tableData.rows}
-        columns={tableData.columns}
+        columns={[
+          { field: "productName", headerName: "Product", width: 250 },
+          { field: "productInr", headerName: "INR", width: 60 },
+          { field: "productId", headerName: "Quantity", width: 80 },
+          {
+            field: "action",
+            headerName: "Action",
+            sortable: false,
+            renderCell: (params: any) => {
+              return (
+                <Button
+                  className="action-btn"
+                  variant="outlined"
+                  startIcon={<DeleteIcon />}
+                  onClick={() => deleteRecord(params?.id)}
+                />
+              );
+            },
+            width: 80,
+          },
+        ]}
         search
       />
     );
