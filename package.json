@@ -1,6 +1,6 @@
 {
   "name": "@krishnasct/ws-pos-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A React components library for Wondersoft.",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
