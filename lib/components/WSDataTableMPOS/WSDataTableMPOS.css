@@ -288,3 +288,24 @@
 .mpos-interface .grid-search-comp .MuiInputBase-root.MuiOutlinedInput-root input{
   padding:11.5px 15px !important
 }
+
+.grid-interface>* {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.grid-interface .grid-search-comp{
+  margin-bottom: 15px !important;
+}
+
+.grid-interface .grid-search-comp label{  
+  top: -5px;
+}
+
+.grid-interface .grid-search-comp label.Mui-focused{  
+  top: 0px;
+}
+
+.grid-interface .grid-search-comp .MuiInputBase-root.MuiOutlinedInput-root input{
+  padding:11.5px 15px !important
+}

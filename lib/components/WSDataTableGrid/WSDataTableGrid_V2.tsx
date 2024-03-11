@@ -18,6 +18,7 @@ import "./WSDataTableGrid.css";
 
 interface WSDataTableGridProps {
   products: Product[];
+  className: string;
   columns: {
     field: string;
     headerName: string;
@@ -38,6 +39,7 @@ interface Product {
 }
 
 export function WSDataTableGrid_V2({
+  className,
   products,
   columns,
   searchableColumn = "name",
@@ -162,7 +164,10 @@ export function WSDataTableGrid_V2({
   };
 
   return (
-    <div>
+    <div
+      style={{ height: 400, width: "100%" }}
+      className={`grid-interface ${className || ""}`}
+    >
       {search && (
         <SearchInput
           id="product-search-granular"
@@ -184,13 +189,12 @@ export function WSDataTableGrid_V2({
               )}
             </InputAdornment>
           }
-          lable="Search"
+          lable="Search Product Purchased Item"
           onChange={(e) => {
             requestSearch(e.target.value);
           }}
         />
       )}
-
       <DataGrid
         rows={tableDataRow}
         columns={definedColumns}
