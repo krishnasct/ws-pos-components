@@ -1,6 +1,6 @@
 import { addons } from "@storybook/manager-api";
 import { create } from "@storybook/theming";
-import favicon from "../public/wondersoft-favicon-icon.svg";
+const favicon = require("../public/wondersoft-favicon-icon.svg")
 
 // Configure favicon
 const link = document.createElement("link");
