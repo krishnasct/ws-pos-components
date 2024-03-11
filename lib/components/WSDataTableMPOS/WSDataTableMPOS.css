@@ -131,6 +131,16 @@
   cursor: pointer;
 }
 
+.mpos-interface .MuiDataGrid-row:hover .MuiButton-root.MuiButton-outlinedPrimary,
+.mpos-interface .MuiDataGrid-row.Mui-hovered .MuiButton-root.MuiButton-outlinedPrimary{
+  border-color: #8ECEFF !important;
+}
+
+.mpos-interface .MuiDataGrid-row:hover .MuiButton-root.MuiButton-outlinedPrimary .MuiButton-iconSizeMedium,
+.mpos-interface .MuiDataGrid-row.Mui-hovered .MuiButton-root.MuiButton-outlinedPrimary .MuiButton-iconSizeMedium{
+  color: #0987e9 !important;
+}
+
 .mpos-interface .MuiDataGrid-row:hover > .MuiDataGrid-cell,
 .mpos-interface .MuiDataGrid-row.Mui-hovered > .MuiDataGrid-cell,
 .mpos-interface .MuiDataGrid-row.Mui-hovered > .MuiDataGrid-cell:hover > .MuiDataGrid-cell,
@@ -214,7 +224,6 @@
   border: 1px solid #e2e2e2;
 }
 
-
 .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-formControl{
   padding-right:20px !important
 }
@@ -226,3 +235,56 @@
   color: #7b809a !important;
 }
 
+.mpos-interface .MuiDataGrid-row .MuiDataGrid-cell .MuiButton-root.MuiButton-outlinedPrimary{
+  border-radius: 4px;
+  border: 1px solid #E9EDF5;
+  background: #FFF;
+  padding: 5px;
+  min-width: unset;
+  width: unset;
+  max-width: unset;
+}
+
+.mpos-interface .MuiDataGrid-row .MuiDataGrid-cell .MuiButton-root.MuiButton-outlinedPrimary .MuiButton-iconSizeMedium{
+  margin: 0;
+  color: #7B809A;
+}
+
+.mpos-interface .MuiDataGrid-row .MuiDataGrid-cell .MuiButton-root.MuiButton-outlinedPrimary .MuiButton-iconSizeMedium svg{
+  font-size: 16px !important;
+}
+
+
+.mpos-interface .grid-search-comp{
+  background: #fff;
+  margin-bottom: 15px !important;
+}
+
+.mpos-interface {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.mpos-interface>* {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.mpos-interface .grid-search-comp label{  
+  top: -5px;
+}
+
+.mpos-interface .grid-search-comp label.Mui-focused{  
+  top: 0px;
+}
+
+.mpos-interface .MuiDataGrid-virtualScroller{
+  width: calc(100% - 2px);
+}
+
+.mpos-interface .grid-search-comp .MuiInputBase-root.MuiOutlinedInput-root input{
+  padding:11.5px 15px !important
+}

@@ -69,8 +69,8 @@ export const WSDataTableMPOS_Grid: Story = {
     rows: rowData,
     columns: [
       { field: "productName", headerName: "Product", width: 250 },
-      { field: "productInr", headerName: "INR", width: 60 },
-      { field: "productId", headerName: "Quantity", width: 80 },
+      { field: "productInr", headerName: "INR", width: 90 },
+      { field: "productId", headerName: "Product Id", width: 130 },
     ],
     search: true,
   },
@@ -111,11 +111,12 @@ export const WSDataTableMPOS_Grid: Story = {
         rows={tableData.rows}
         columns={[
           { field: "productName", headerName: "Product", width: 250 },
-          { field: "productInr", headerName: "INR", width: 60 },
-          { field: "productId", headerName: "Quantity", width: 80 },
+          { field: "productInr", headerName: "INR", width: 90 },
+          { field: "productId", headerName: "Product Id", width: 130 },
           {
             field: "action",
             headerName: "Action",
+            width: 100 ,
             sortable: false,
             renderCell: (params: any) => {
               return (
@@ -127,7 +128,6 @@ export const WSDataTableMPOS_Grid: Story = {
                 />
               );
             },
-            width: 80,
           },
         ]}
         search
