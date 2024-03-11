@@ -196,7 +196,17 @@ export const WSDataTableGrid_Grid_v2: Story = {
   args: {
     rows,
     products: rows,
+    columns,  
+  },
+};
+
+export const WSDataTableGrid_Grid_v3: Story = {
+  name: "WS Data Table (GridV3)",
+  args: {
+    rows,
+    products: rows,
     columns,
+    search: true
   },
 };
 

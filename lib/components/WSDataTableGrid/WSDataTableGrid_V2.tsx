@@ -1,12 +1,20 @@
 import * as React from "react";
+import { useState } from "react";
 import {
   DataGrid,
   GridColDef,
   GridRenderEditCellParams,
 } from "@mui/x-data-grid";
-import { Autocomplete, TextField } from "@mui/material";
+import {
+  Autocomplete,
+  IconButton,
+  InputAdornment,
+  TextField,
+} from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import ClearIcon from "@mui/icons-material/Clear";
+import { SearchInput } from "../WSDataTableMPOS/SearchInput";
 import "./WSDataTableGrid.css";
-import { useState } from "react";
 
 interface WSDataTableGridProps {
   products: Product[];
@@ -17,6 +25,7 @@ interface WSDataTableGridProps {
     editable: boolean;
   }[];
   searchableColumn: string;
+  search: boolean;
 }
 
 interface Product {
@@ -32,12 +41,33 @@ export function WSDataTableGrid_V2({
   products,
   columns,
   searchableColumn = "name",
+  search,
 }: WSDataTableGridProps) {
   console.log("GRIDV2");
+  const [searchDatas, setSearchDatas] = useState({
+    values: "",
+    icon: true,
+  });
   const initialRow: Product[] = [
     {
       id: 1,
-      name: "",
+      name: "Dish Washer",
+      price: 0,
+      category: "",
+      stock: 0,
+      quantity: 0,
+    },
+    {
+      id: 2,
+      name: "Laptop",
+      price: 0,
+      category: "",
+      stock: 0,
+      quantity: 0,
+    },
+    {
+      id: 3,
+      name: "Car",
       price: 0,
       category: "",
       stock: 0,
@@ -46,20 +76,19 @@ export function WSDataTableGrid_V2({
   ];
 
   // const [rows, setRows] = useState(initialRow);
-  const [selectedProducts, setSelectedProducts] =
-    useState<Product[]>(initialRow);
+  const [tableDataRow, setTableDataRow] = useState<Product[]>(initialRow);
 
   const [filteredProducts, setFilteredProducts] = useState(products);
 
-  const handleNameChange = (id: number, newValue: any) => {
-    setSelectedProducts((prevProducts) =>
-      prevProducts.map((product) =>
-        product.id === id
-          ? { ...product, [searchableColumn]: newValue }
-          : product
-      )
-    );
-  };
+  // const handleNameChange = (id: number, newValue: any) => {
+  //   setSelectedProducts((prevProducts) =>
+  //     prevProducts.map((product) =>
+  //       product.id === id
+  //         ? { ...product, [searchableColumn]: newValue }
+  //         : product
+  //     )
+  //   );
+  // };
 
   const filterProducts = (searchTerm: string) => {
     if (!searchTerm) {
@@ -119,10 +148,51 @@ export function WSDataTableGrid_V2({
 
   const definedColumns = generateColumns(columns);
 
+  const requestSearch = (searchVal: string) => {
+    setSearchDatas({ ...searchDatas, icon: false, values: searchVal });
+    const filteredRows = initialRow.filter((row: any) => {
+      return row.name.toLowerCase().includes(searchVal.toLowerCase());
+    });
+    setTableDataRow(filteredRows);
+  };
+
+  const cancelSearch = () => {
+    setSearchDatas({ ...searchDatas, icon: true, values: "" });
+    setTableDataRow(initialRow);
+  };
+
   return (
     <div>
+      {search && (
+        <SearchInput
+          id="product-search-granular"
+          htmlFor="product-search-granular"
+          className="grid-search-comp"
+          sx={{ m: 1, width: "100%" }}
+          variant="outlined"
+          value={searchDatas.values}
+          endAdornment={
+            <InputAdornment position="end">
+              {searchDatas.icon ? (
+                <IconButton edge="end">
+                  <SearchIcon />
+                </IconButton>
+              ) : (
+                <IconButton onClick={cancelSearch} edge="end">
+                  <ClearIcon />
+                </IconButton>
+              )}
+            </InputAdornment>
+          }
+          lable="Search"
+          onChange={(e) => {
+            requestSearch(e.target.value);
+          }}
+        />
+      )}
+
       <DataGrid
-        rows={selectedProducts}
+        rows={tableDataRow}
         columns={definedColumns}
         initialState={{
           pagination: {

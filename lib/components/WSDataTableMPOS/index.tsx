@@ -6,8 +6,8 @@ import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
-import DeleteIcon from "@mui/icons-material/Delete";
-import { Button, FormControl, InputLabel } from "@mui/material";
+import { FormControl, InputLabel } from "@mui/material";
+import { SearchInput } from "./SearchInput";
 import "./WSDataTableMPOS.css";
 
 interface WSDataTableMPOSProps {
@@ -25,7 +25,6 @@ export const WSDataTableMPOS = ({
   // actions,
   search,
 }: WSDataTableMPOSProps) => {
-
   console.log("Check row datas from mPOS table component --->", rows);
 
   const [tableDataRow, setTableDataRow] = useState(rows);
@@ -55,11 +54,44 @@ export const WSDataTableMPOS = ({
       className={`mpos-interface ${className || ""}`}
     >
       {search && (
-        <FormControl sx={{ m: 1, width: "100%" }} className="grid-search-comp" variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">Search</InputLabel>
-          <OutlinedInput
-            id="search"
-            type="text"
+        <>
+          {/* <FormControl
+            sx={{ m: 1, width: "100%" }}
+            className="grid-search-comp"
+            variant="outlined"
+          >
+            <InputLabel htmlFor="outlined-adornment-password">
+              Search
+            </InputLabel>
+            <OutlinedInput
+              id="search"
+              type="text"
+              value={searchDatas.values}
+              endAdornment={
+                <InputAdornment position="end">
+                  {searchDatas.icon ? (
+                    <IconButton edge="end">
+                      <SearchIcon />
+                    </IconButton>
+                  ) : (
+                    <IconButton onClick={cancelSearch} edge="end">
+                      <ClearIcon />
+                    </IconButton>
+                  )}
+                </InputAdornment>
+              }
+              label="Search"
+              onChange={(e) => {
+                requestSearch(e.target.value);
+              }}
+            />
+          </FormControl> */}
+          <SearchInput
+            id="product-search-granular"
+            htmlFor="product-search-granular"
+            className="grid-search-comp"
+            sx={{ m: 1, width: "100%" }}
+            variant="outlined"
             value={searchDatas.values}
             endAdornment={
               <InputAdornment position="end">
@@ -74,12 +106,12 @@ export const WSDataTableMPOS = ({
                 )}
               </InputAdornment>
             }
-            label="Search"
+            lable="Search"
             onChange={(e) => {
               requestSearch(e.target.value);
             }}
           />
-        </FormControl>
+        </>
       )}
       <DataGrid
         rows={tableDataRow}
