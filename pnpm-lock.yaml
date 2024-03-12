@@ -23,6 +23,9 @@ devDependencies:
   '@mui/x-data-grid-generator':
     specifier: ^6.19.6
     version: 6.19.6(@mui/icons-material@5.15.12)(@mui/material@5.15.12)(@mui/system@5.15.12)(@types/react@18.2.63)(react-dom@18.2.0)(react@18.2.0)
+  '@ramsct005/ws-pos-granular-components':
+    specifier: 0.1.0
+    version: 0.1.0(@emotion/react@11.11.4)(@emotion/styled@11.11.0)(@mui/material@5.15.12)(react-dom@18.2.0)(react@18.2.0)
   '@storybook/addon-actions':
     specifier: ^7.6.17
     version: 7.6.17
@@ -3339,6 +3342,22 @@ packages:
     resolution: {integrity: sha512-fyrgCaedtvMg9NK3en0pnOYJdtfwxUcNolezkNPUsoX57X8oQk+NkqcvzHXD2uKNij6GXmWU9NDru2IWjrO4BQ==}
     dependencies:
       '@babel/runtime': 7.24.0
+    dev: true
+
+  /@ramsct005/ws-pos-granular-components@0.1.0(@emotion/react@11.11.4)(@emotion/styled@11.11.0)(@mui/material@5.15.12)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-x53sc5NPc1lJ8sEjPkv6XPpk/RLRAsssdAUasiQLnpzt+N4p5OR4ZR0upKHliNSzqXxixArToQVVFfvHqjh6sQ==, tarball: https://npm.pkg.github.com/download/@ramsct005/ws-pos-granular-components/0.1.0/3056c25764b5d1fef56425de62de7218c3ca4d9b}
+    peerDependencies:
+      '@emotion/react': ^11.11.4
+      '@emotion/styled': ^11.11.0
+      '@mui/material': ^5.15.12
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@emotion/react': 11.11.4(@types/react@18.2.63)(react@18.2.0)
+      '@emotion/styled': 11.11.0(@emotion/react@11.11.4)(@types/react@18.2.63)(react@18.2.0)
+      '@mui/material': 5.15.12(@emotion/react@11.11.4)(@emotion/styled@11.11.0)(@types/react@18.2.63)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: true
 
   /@rollup/pluginutils@5.1.0:

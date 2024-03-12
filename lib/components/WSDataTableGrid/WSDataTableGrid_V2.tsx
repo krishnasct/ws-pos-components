@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
-import { SearchInput } from "../WSDataTableMPOS/SearchInput";
+import { WSSearchableInput } from "@ramsct005/ws-pos-granular-components";
 import "./WSDataTableGrid.css";
 
 interface WSDataTableGridProps {
@@ -169,7 +169,7 @@ export function WSDataTableGrid_V2({
       className={`grid-interface ${className || ""}`}
     >
       {search && (
-        <SearchInput
+        <WSSearchableInput
           id="product-search-granular"
           htmlFor="product-search-granular"
           className="grid-search-comp"
@@ -189,8 +189,8 @@ export function WSDataTableGrid_V2({
               )}
             </InputAdornment>
           }
-          lable="Search Product Purchased Item"
-          onChange={(e) => {
+          lable="Search"
+          onChange={(e: any) => {
             requestSearch(e.target.value);
           }}
         />
