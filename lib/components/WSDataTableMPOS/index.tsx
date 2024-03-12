@@ -7,7 +7,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 import { FormControl, InputLabel } from "@mui/material";
-import { SearchInput } from "./SearchInput";
+import { WSSearchableInput } from "@ramsct005/ws-pos-granular-components"; // This component is from granular component library
 import "./WSDataTableMPOS.css";
 
 interface WSDataTableMPOSProps {
@@ -86,7 +86,7 @@ export const WSDataTableMPOS = ({
               }}
             />
           </FormControl> */}
-          <SearchInput
+          <WSSearchableInput
             id="product-search-granular"
             htmlFor="product-search-granular"
             className="grid-search-comp"
@@ -107,7 +107,7 @@ export const WSDataTableMPOS = ({
               </InputAdornment>
             }
             lable="Search"
-            onChange={(e) => {
+            onChange={(e: any) => {
               requestSearch(e.target.value);
             }}
           />

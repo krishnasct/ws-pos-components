@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
-import { WSSearchableInput } from "@ramsct005/ws-pos-granular-components";
+import { WSSearchableInput } from "@ramsct005/ws-pos-granular-components"; // This component is from granular component library
 import "./WSDataTableGrid.css";
 
 interface WSDataTableGridProps {
