@@ -67,12 +67,8 @@ export const WSDataTableMPOS_Grid: Story = {
   name: "WS Data Table (mPOS)",
   args: {
     rows: rowData,
-    columns: [
-      { field: "productName", headerName: "Product", width: 250 },
-      { field: "productInr", headerName: "INR", width: 90 },
-      { field: "productId", headerName: "Product Id", width: 130 },
-    ],
     search: true,
+    searchInputLable: "Product Search",
   },
   render: function Render(args: any) {
     console.log("Check args from MPOS data table --->", args);
@@ -116,7 +112,7 @@ export const WSDataTableMPOS_Grid: Story = {
           {
             field: "action",
             headerName: "Action",
-            width: 100 ,
+            width: 100,
             sortable: false,
             renderCell: (params: any) => {
               return (
@@ -130,7 +126,8 @@ export const WSDataTableMPOS_Grid: Story = {
             },
           },
         ]}
-        search
+        search={args.search}
+        searchInputLable={args.searchInputLable}
       />
     );
   },

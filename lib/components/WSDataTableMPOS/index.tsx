@@ -16,6 +16,7 @@ interface WSDataTableMPOSProps {
   className?: string;
   // actions: any;
   search?: boolean;
+  searchInputLable: string;
 }
 
 export const WSDataTableMPOS = ({
@@ -24,6 +25,7 @@ export const WSDataTableMPOS = ({
   columns,
   // actions,
   search,
+  searchInputLable,
 }: WSDataTableMPOSProps) => {
   console.log("Check row datas from mPOS table component --->", rows);
 
@@ -106,7 +108,7 @@ export const WSDataTableMPOS = ({
                 )}
               </InputAdornment>
             }
-            lable="Search"
+            lable={searchInputLable}
             onChange={(e: any) => {
               requestSearch(e.target.value);
             }}
