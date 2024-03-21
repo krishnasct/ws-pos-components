@@ -10,7 +10,7 @@ const columns = [
   { field: "quantity", headerName: "Quantity", type: "number", width: 110, editable: true },
 ];
 
-/* const rows = [
+const rows = [
   {
     "id": 1,
     "name": "Coffee",
@@ -171,11 +171,11 @@ const columns = [
     "stock": 110,
     "quantity": 1
   }
-]; */
+];
 
-const rows: any = [
+// const rows: any = [
   
-]
+// ]
 
 
 const meta: any = {
@@ -191,17 +191,17 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const WSDataTableGrid_Grid_v2: Story = {
-  name: "WS Data Table (GridV2)",
-  args: {
-    rows,
-    products: rows,
-    columns,  
-  },
-};
+// export const WSDataTableGrid_Grid_v2: Story = {
+//   name: "WS Data Table (GridV2)",
+//   args: {
+//     rows,
+//     products: rows,
+//     columns,  
+//   },
+// };
 
 export const WSDataTableGrid_Grid_v3: Story = {
-  name: "WS Data Table (GridV3)",
+  name: "WS Data Table (GridV2)",
   args: {
     rows,
     products: rows,

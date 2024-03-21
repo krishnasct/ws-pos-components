@@ -50,32 +50,7 @@ export function WSDataTableGrid_V2({
     values: "",
     icon: true,
   });
-  const initialRow: Product[] = [
-    {
-      id: 1,
-      name: "Dish Washer",
-      price: 0,
-      category: "",
-      stock: 0,
-      quantity: 0,
-    },
-    {
-      id: 2,
-      name: "Laptop",
-      price: 0,
-      category: "",
-      stock: 0,
-      quantity: 0,
-    },
-    {
-      id: 3,
-      name: "Car",
-      price: 0,
-      category: "",
-      stock: 0,
-      quantity: 0,
-    },
-  ];
+  const initialRow: Product[] = products;
 
   // const [rows, setRows] = useState(initialRow);
   const [tableDataRow, setTableDataRow] = useState<Product[]>(initialRow);
@@ -203,6 +178,7 @@ export function WSDataTableGrid_V2({
             paginationModel: { page: 0, pageSize: 5 },
           },
         }}
+        pageSizeOptions={[5, 10]}
       />
     </div>
   );
